@@ -10,4 +10,4 @@ COPY ./app /usr/src/app
 VOLUME /usr/src/app
 
 EXPOSE 8080
-CMD /usr/src/app/gocron/go-cron -s "*/10 * * * * *" -p 8080 -- /usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/
+CMD /usr/src/app/gocron/go-cron -s "0 1 * * * *" -p 8080 -- /usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/
