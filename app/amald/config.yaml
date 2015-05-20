@@ -1,5 +1,5 @@
 activeloaders:
-  #gcloudcli: ~
+  gcloudcli: ~
   textfile:
     path: "/usr/src/app/amald/urls.txt"
 reports:
