@@ -22,4 +22,6 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 ENV HOME /
 
 EXPOSE 8080
+
+# RUN CMD
 CMD gcloud auth activate-refresh-token $GCLOUD_ACCOUNT $GCLOUD_REFRESH && /usr/src/app/gocron/go-cron -s "0 0 1 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/"
