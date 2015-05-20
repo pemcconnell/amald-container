@@ -3,6 +3,9 @@ MAINTAINER <peter.mcconnell@rehabstudio.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+COPY ./app /usr/src/app
+VOLUME /usr/src/app
+
 # INSTALL CA-CERTS
 RUN apt-get update
 RUN apt-get install -y ca-certificates
@@ -17,10 +20,6 @@ RUN google-cloud-sdk/bin/gcloud --quiet config set component_manager/disable_upd
 RUN mkdir /.ssh
 ENV PATH /google-cloud-sdk/bin:$PATH
 ENV HOME /
-RUN gcloud auth activate-refresh-token $GCLOUD_ACCOUNT $GCLOUD_REFRESH
-
-COPY ./app /usr/src/app
-VOLUME /usr/src/app
 
 EXPOSE 8080
-CMD /usr/src/app/gocron/go-cron -s "0 0 1 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/"
+CMD gcloud auth activate-refresh-token $GCLOUD_ACCOUNT $GCLOUD_REFRESH && /usr/src/app/gocron/go-cron -s "0 0 1 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/"
