@@ -2,7 +2,10 @@
 
 # Copy data
 mkdir /data
-cp /usr/src/app/amald/data/data.json /data/data.json
+if [ -f /data/data.json ]; 
+then
+	cp /usr/src/app/amald/data/data.json /data/data.json
+fi
 
 # Log into gcloud
 gcloud auth activate-refresh-token $GCLOUD_ACCOUNT $GCLOUD_REFRESH
