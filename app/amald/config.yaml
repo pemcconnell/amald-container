@@ -12,5 +12,5 @@ reports:
     subj: "Lockdown status report"
 storage:
   json:
-    path: "/usr/src/app/amald/data/data.json" # folder must exist
+    path: "/data/data.json" # folder must exist
     recordlimit: 40 # careful: this could truncate an existing file
