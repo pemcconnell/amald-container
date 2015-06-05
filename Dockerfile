@@ -25,4 +25,3 @@ EXPOSE 8080
 
 # RUN CMD
 CMD /bin/bash /usr/src/app/start.sh
-
