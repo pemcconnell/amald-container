@@ -2,7 +2,7 @@
 
 # Copy data
 mkdir /data
-if [ -f /data/data.json ]; 
+if [ ! -f /data/data.json ]; 
 then
 	cp /usr/src/app/amald/data/data.json /data/data.json
 fi
