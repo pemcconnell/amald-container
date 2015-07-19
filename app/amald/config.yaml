@@ -5,10 +5,10 @@ activeloaders:
 reports:
   ascii: ~
   mailgun:
-    privatekey: "key-e0a7e21bd25805847d63c3eef4762cdf"
-    domain: "https://api.mailgun.net/v2/mg.rehabstudio.com"
-    from: "Lockdown Tracker <postmaster@mg.rehasbtudio.com>"
-    to: "Sysadmins <peter.mcconnell@rehabstudio.com>"
+    privatekey: "key-aaa"
+    domain: "https://api.mailgun.net/v2/mg.domain.com"
+    from: "Lockdown Tracker <postmaster@mg.domain.com>"
+    to: "Sysadmins <me@domain.com>"
     subj: "Lockdown status report"
 storage:
   json:
