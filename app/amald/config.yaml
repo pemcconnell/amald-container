@@ -1,7 +1,20 @@
-activeloaders:
+global:
+  templatesdir: "/usr/src/app/amald/reports/tmpl/"
+showsamestate: false
+loaders:
   gcloudcli: ~
-  textfile:
+  textfile: 
     path: "/usr/src/app/amald/urls.txt"
+summaryintervals:
+  - title: "yesterday"
+    distancehours: 24
+    ansii: "green+h:black"
+  - title: "last week"
+    distancehours: 168
+    ansii: "red+h:black"
+  - title: "last month"
+    distancehours: 720
+    ansii: "blue+h:black"
 reports:
   ascii: ~
   mailgun:

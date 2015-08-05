@@ -11,4 +11,4 @@ fi
 gcloud auth activate-refresh-token $GCLOUD_ACCOUNT $GCLOUD_REFRESH
 
 # Run cron
-/usr/src/app/gocron/go-cron -s "0 0 1 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/"
+/usr/src/app/gocron/go-cron -s "0 0 9 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -configPath=/usr/src/app/amald/config.yaml"
