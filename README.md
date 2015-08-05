@@ -18,9 +18,9 @@ In order to connect to the gcloud cli (to retrieve information about your apps),
 ### Run script
 The Docker command runs `./app/start.sh` which is worth investigating. One line to note reads (at the time of writing this README):
 
-`/usr/src/app/gocron/go-cron -s "0 0 1 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -c=/usr/src/app/amald/config.yaml -t=/usr/src/app/amald/reports/tmpl/"`
+`/usr/src/app/gocron/go-cron -s "0 0 9 * * *" -p 8080 -- /bin/bash -c "/usr/src/app/amald/amald_linux_64 -configPath=/usr/src/app/amald/config.yaml`
 
-This command runs go-cron with a predefined cron interval set to `0 0 1 * * *` - feel free to tweak this to suit your applications needs
+This command runs go-cron with a predefined cron interval set to `0 0 9 * * *` - feel free to tweak this to suit your applications needs
 
 ### JSON output
 Part of this container runs [go-cron](https://github.com/robfig/cron) which runs a local webserver. You can access the output of this webserver by looking at port 8080. An example of this output is:
