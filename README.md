@@ -2,7 +2,7 @@
 
 This repo is designed to allow you to run [amald](https://github.com/pemcconnell/amald) in a Docker container. This includes support for connecting to gcloud.
 
-__note__: The version of amald contained in this repo is v0.0.4
+__note__: The version of amald contained in this repo is v0.0.5
 
 ### Environment variables
 In order to connect to the gcloud cli (to retrieve information about your apps), this container expects two environment variables to be set:
